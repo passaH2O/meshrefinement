@@ -144,7 +144,8 @@ def smooth_island_interface(large_islands, outside, buffer=4):
     """
     Optional function to smooth channel-island interface from opposite
     orientation as smooth_object_interface. Can lead to slightly more
-    locally-convex perimeter.
+    locally-convex perimeter. This function improves RDP results later.
+    Note: the buffer used here should be smaller than the dilation buffer.
     Inputs:
         large_islands (np.ndarray) : Binary raster indicating
             largest islands for coarsening, output of ensure_large_islands()
