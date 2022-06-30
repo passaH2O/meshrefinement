@@ -77,7 +77,7 @@ def enforce_connectivity(image, outside):
     image_count = np.array(measure.label(image, connectivity=2), dtype=float)
     image_count[image_count==0] = np.nan
     # Find the most common object index:
-    largest_val = stats.mode(image_count, nan_policy='omit')[0][0]
+    largest_val = stats.mode(image_count, nan_policy='omit', axis=None)[0][0]
     # Filter out everything outside largest connected cluster:
     connected_cluster = (image_count==largest_val)
     return connected_cluster
